@@ -118,10 +118,12 @@ markCourse2.addEventListener("click", () => {
 markExam1.addEventListener("click", () => {
   let collection = allMateriasSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
-    disableOption(allMateriasSelect, collection[i].value);
-    addToSelect(examObtainedSelect,  collection[i].innerHTML, collection[i].value);
-    removeFromSelect(courseObtainedSelect, collection[i].value);
-    removeFromSelect(availableMateriasSelect, collection[i].value);
+    let materia = getMateria(collection[i].value);
+    disableOption(allMateriasSelect, materia.id);
+    addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
+    removeFromSelect(courseObtainedSelect, materia.id);
+    removeFromSelect(availableMateriasSelect, materia.id);
+    addCreditos(materia.Cat, materia.creditos);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
