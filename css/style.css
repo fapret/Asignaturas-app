@@ -1,0 +1,33 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+div {
+  margin: 1rem;
+}
+
+select {
+  min-height: 10rem;
+}
+
+.MateriasContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.alert{
+  color: red;
+}
+
+.buttons-div{
+  padding-top: 1rem;
+  margin: auto;
+}
