@@ -26,7 +26,6 @@ div {
 }
 
 select {
-  appearance: none;
   min-height: 10rem;
 }
 @media only screen and (max-height:480px) and (orientation:portrait) { 
