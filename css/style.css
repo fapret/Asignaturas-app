@@ -17,6 +17,9 @@ th{
 .center{
   text-align: center;
 }
+tr td:last-child{
+  text-align: right;
+}
 
 div {
   margin: 1rem;
