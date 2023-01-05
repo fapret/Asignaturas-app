@@ -28,6 +28,11 @@ div {
 select {
   min-height: 10rem;
 }
+@media only screen and (max-height:480px) and (orientation:portrait) { 
+  select {
+    size: 10;
+  }
+}
 
 h1{
   text-align: center;
