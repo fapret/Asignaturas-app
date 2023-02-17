@@ -148,7 +148,7 @@ function getBitFieldShrinked(bitField){
     for(j = i; j < 31 && j < bitField.length; j++){
       let pos = j - i;
       let value = bitField.charAt(j);
-      if(value)
+      if(value == "1")
         localChar |= Math.pow(2, pos);
       else
         localChar &= ~Math.pow(2, pos);
