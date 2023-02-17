@@ -1,4 +1,5 @@
-var materias = [
+//Advertencia: la lista es ordenada, cambiar el orden cambia el sistema de BitField
+const materias = [
   {id: 1023, name: 'Matematica Discreta', creditos: 9, Cat: 0},
   {id: 1025, name: 'Probabilidad y Estadistica', creditos: 10, Cat: 0, Req: [{courseReq: "1062", examReq: "1030&&1061"}]},
   {id: 1026, name: 'Matematica Discreta 2', creditos: 9, Cat: 0, Req: [{courseReq: "1023&&1030"}]},
@@ -35,7 +36,6 @@ var materias = [
   {id: 1353, name: 'DIDACTICA DE ALGORIT.Y ESTRUCT.DE DATOS', creditos: 7, Cat: 2, Req: [{examReq: "1322&&1321"}]},
   {id: 1354, name: 'Programación funcional', creditos: 10, Cat: 2, Req: [{examReq: "1321&&1027&&1325&&1023"}]},
   {id: 1355, name: 'Complejidad Computacional', creditos: 9, Cat: 2, Req: [{courseReq: "1325", examReq: "1323"}]},
-  //{id: 1373, name: 'Programación 1', creditos: 10, Cat: 2, Req: [{courseReq: "", examReq: "", credReq: 0}]}
   {id: 1434, name: 'Computación de alta performance', creditos: 10, Cat: 3, Req: [{courseReq: "1324&&1446&&1537&&1443"}]},
   {id: 1437, name: 'Taller de Seguridad Informatica', creditos: 7, Cat: 3, Req: [{courseReq: "1446", examReq: "1323&&1911"}]},
   {id: 1438, name: 'Aplicacion de teoria de la inf. Al Proc. De Imag.', creditos: 6, Req: [{examReq: "1025"}]},
