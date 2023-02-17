@@ -145,15 +145,16 @@ function getBitFieldShrinked(bitField){
   for(let i = 0; i < bitField.length; i++){
     let localChar = 0;
     let j;
+    let pos = 0;
     for(j = i; j < 5 && j < bitField.length; j++){
-      let pos = j - i;
+      pos = j - i;
       let value = bitField.charAt(j);
       if(value == "1")
         localChar |= Math.pow(2, pos);
       else
         localChar &= ~Math.pow(2, pos);
     }
-    i += j;
+    i += pos;
     out += String.fromCharCode(';'.charCodeAt(0) + localChar);
   }
   return out;
