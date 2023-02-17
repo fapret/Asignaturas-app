@@ -105,6 +105,7 @@ markCourse1.addEventListener("click", () => {
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
     updateBitField(coursebitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + "+" + getBitFieldShrinked(examsbitField);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
@@ -114,6 +115,7 @@ markCourse2.addEventListener("click", () => {
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
     updateBitField(coursebitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + "+" + getBitFieldShrinked(examsbitField);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
@@ -125,6 +127,7 @@ markExam1.addEventListener("click", () => {
     disableOption(allMateriasSelect, materia.id);
     addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
     updateBitField(examsbitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + "+" + getBitFieldShrinked(examsbitField);
     removeFromSelect(courseObtainedSelect, materia.id);
     removeFromSelect(availableMateriasSelect, materia.id);
     addCreditos(materia.Cat, materia.creditos);
@@ -139,6 +142,7 @@ markExam2.addEventListener("click", () => {
     disableOption(allMateriasSelect, materia.id);
     addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
     updateBitField(examsbitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + "+" + getBitFieldShrinked(examsbitField);
     removeFromSelect(courseObtainedSelect, materia.id);
     removeFromSelect(availableMateriasSelect, materia.id);
     addCreditos(materia.Cat, materia.creditos);
