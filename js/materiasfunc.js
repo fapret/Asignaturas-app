@@ -160,7 +160,7 @@ function getBitFieldShrinked(bitField){
         localChar &= ~Math.pow(2, pos);
     }
     i = --j;
-    out += String.fromCharCode('A'.charCodeAt(0) + localChar);
+    out += String.fromCharCode('0'.charCodeAt(0) + localChar);
   }
   return out;
 }
