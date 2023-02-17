@@ -145,7 +145,7 @@ function getBitFieldShrinked(bitField){
   for(let i = 0; i < bitField.length; i++){
     let localChar = 0;
     let j;
-    for(j = i; j < 32 && j < bitField.length; j++){
+    for(j = i; j < 31 && j < bitField.length; j++){
       let pos = j - i;
       let value = bitField.charAt(j);
       if(value)
