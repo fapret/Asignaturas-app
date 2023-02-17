@@ -133,11 +133,16 @@ function getUpdatedBitField(bitField, materia, value = true){
   }
   if(!found)
     return;
-  if(value){
-    return bitField.substring(0, i) + "1" + bitField.substring(i+1);
-  }
+  if(value)
+    if(i == 0)
+      return "1" + bitField.substring(1);
+    else
+      return bitField.substring(0, i) + "1" + bitField.substring(i+1);
   else
-    return bitField.substring(0, i) + "0" + bitField.substring(i+1);
+    if (i == 0)
+      return "0" + bitField.substring(1);
+    else
+      return bitField.substring(0, i) + "0" + bitField.substring(i+1);
 }
 
 function getBitFieldShrinked(bitField){
