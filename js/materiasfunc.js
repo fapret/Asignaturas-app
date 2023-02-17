@@ -129,6 +129,7 @@ function getUpdatedBitField(bitField, materia, value = true){
     let materiaAux = materias[i];
     if(materiaAux.id == materia){
       found = true;
+      i--;
     }
   }
   if(!found)
