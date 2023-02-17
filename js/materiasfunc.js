@@ -122,7 +122,7 @@ function getMateria(idmateria){
   return undefined;
 }
 
-function updateBitField(bitField, materia, value){
+function updateBitField(bitField, materia, value = true){
   let found = false;
   let i;
   for(i = 0; !found && i < materias.length; i++){
