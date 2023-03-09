@@ -6,21 +6,21 @@ var materias = [
   {id: 1030, name: 'Geometria y Algebra Lineal 1', creditos: 9, Cat: 0},
   {id: 1031, name: 'Geometria y Algebra Lineal 2', creditos: 9, Cat: 0, Req: [{courseReq: "1030"}]},
   {id: 1033, name: 'Metodos Numericos', creditos: 8, Cat: 6, Req: [{examReq: "1062&&1322&&1031&&1030&&1061"}]},
-  //{id: 1057, name: 'Metodos Montecarlo', creditos: 8, Cat: 6, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1057, name: 'Metodos Montecarlo', creditos: 8, Cat: 6, Req: [{examReq: "1610&&1025"}]},
   {id: 1061, name: 'Calculo DIV', creditos: 13, Cat: 0},
   {id: 1062, name: 'Calculo DIVV', creditos: 13, Cat: 0, Req: [{courseReq: "1061"}]},
   {id: 1063, name: 'Calculo Vectorial', creditos: 10, Cat: 0, Req: [{courseReq: "1062", examReq: "1061&&1030"}]},
   {id: 1064, name: 'Introduccion a las ecuaciones diferenciales', creditos: 10, Cat: 0, Req: [{courseReq: "1062", examReq: "1030&&1061&&1031"}]},
-  //{id: 1066, name: 'Funciones de variable compleja', creditos: 5, Cat: 0, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1066, name: 'Funciones de variable compleja', creditos: 5, Cat: 0, Req: [{courseReq: "1063", examReq: "1062"}]},
   {id: 1131, name: 'Introduccion a la fisica moderna', creditos: 10, Cat: 1, Req: [{examReq: "1153"}]},
   {id: 1151, name: 'Fisica 1', Cat: 1, creditos: 10},
   {id: 1152, name: 'Fisica 2', creditos: 10, Cat: 1, Req: [{courseReq: "1061&&1151"}]},
   {id: 1153, name: 'Fisica 3', creditos: 10, Cat: 1, Req: [{courseReq: "1061&&1151&&1152"}, {courseReq: "1061", examReq: "1151"}]},
-  //{id: 1213, name: 'Planificacion de clases: diseño de unid. didact.', creditos: 2, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1213, name: 'Planificacion de clases: diseño de unid. didact.', creditos: 2, Req: [{credReq: 100}]},
   {id: 1216, name: 'Taller Encarare: Crear', creditos: 8, Req: [{credReq: 250}]},
   {id: 1224, name: 'Economia', creditos: 7, Cat: 11},
   {id: 1225, name: 'Politicas Cientificas', Cat: 11, creditos: 3},
-  //{id: 1270, name: 'Ciudadania en entornos digitales', creditos: 6, Cat: 11, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1270, name: 'Ciudadania en entornos digitales', creditos: 6, Cat: 11, Req: [{credReq: 140}]},
   {id: 1316, name: 'Introduccion a la computacion grafica', Cat: 2, creditos: 10, Req: [{courseReq: "1031", examReq: "1323&&1030&&1324"}]},
   {id: 1321, name: 'Programación 2', creditos: 12, Cat: 2, Req: [{courseReq: "1322"}]},
   {id: 1322, name: 'Programación 1', creditos: 10, Cat: 2,},
@@ -36,7 +36,7 @@ var materias = [
   {id: 1354, name: 'Programación funcional', creditos: 10, Cat: 2, Req: [{examReq: "1321&&1027&&1325&&1023"}]},
   {id: 1355, name: 'Complejidad Computacional', creditos: 9, Cat: 2, Req: [{courseReq: "1325", examReq: "1323"}]},
   //{id: 1373, name: 'Programación 1', creditos: 10, Cat: 2, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1434, name: 'Computación de alta performance', creditos: 10, Cat: 3, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1434, name: 'Computación de alta performance', creditos: 10, Cat: 3, Req: [{courseReq: "1324&&1446&&1537&&1443"}]},
   {id: 1437, name: 'Taller de Seguridad Informatica', creditos: 7, Cat: 3, Req: [{courseReq: "1446", examReq: "1323&&1911"}]},
   {id: 1438, name: 'Aplicacion de teoria de la inf. Al Proc. De Imag.', creditos: 6, Req: [{examReq: "1025"}]},
   {id: 1440, name: 'Analisis y diseño de algorit. Distrib. En redes', Cat: 3, creditos: 8, Req: [{examReq: "1323&&1446"}]},
@@ -47,7 +47,7 @@ var materias = [
   {id: 1510, name: 'Control de Calidad', creditos: 8, Cat: 9, Req: [{courseReq: "1025", credReq: 80}]},
   {id: 1537, name: 'Sistemas Operativos', creditos: 12, Cat: 3, Req: [{courseReq: "1443", examReq: "1321&&1061&&1030&&1023"}]},
   {id: 1543, name: 'Int. Al negocio del software', creditos: 6, Cat: 9, Req: [{courseReq: "1716"}]},
-  //{id: 1556, name: 'Sistemas embebidos para tiempo real', creditos: 10, Cat: 3, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1556, name: 'Sistemas embebidos para tiempo real', creditos: 10, Cat: 3, Req: [{examReq: "1443&&1321"}]},
   {id: 1610, name: 'Int. A la Investigación de operaciones', creditos: 10, Cat: 7, Req: [{examReq: "1030&&1061&&1062&&1025&&1031"}]},
   {id: 1624, name: 'Modelado y Optimizacion', creditos: 6, Cat: 7, Req: [{examReq: "1610"}]},
   {id: 1631, name: 'Fundamentos de Programación entera', creditos: 8, Cat: 7, Req: [{examReq: "1610"}]},
@@ -59,38 +59,38 @@ var materias = [
   {id: 1721, name: 'Proyecto de ingenieria de software', creditos: 15, Cat: 10, Req: [{courseReq: "1716", examReq: "1324"}]},
   {id: 1730, name: 'Proyecto de grado', creditos: 30, Cat: 10, Req: [{credReq: 380},{courseReq: "1537&&1327&&1911&&1610&&1323&&1716&&1033&&1325&&1721&&1324&&1443", credReq: 365}]},
   {id: 1742, name: 'Taller de verificacion del software', creditos: 8, Cat: 8, Req: [{courseReq: "1716", examReq: "1911"}]},
-  //{id: 1758, name: 'Relaciones personales en ing. de soft. y ger. de proy.', creditos: 10, Cat: 8, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1767, name: 'Princ. y fund. del proc. pers. de software', creditos: 7, Cat: 8, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1775, name: 'Taller de sistemas empresariales', creditos: 15, Cat: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1776, name: 'Taller de sist. de inf. geo. empres.', creditos: 10, Cat: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1780, name: 'Taller de robotica educativa', creditos: 6, Cat: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1781, name: 'Sistemas de informacion para el analisis de grandes volumenes de datos', creditos: 10, Cat: 5, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1828, name: 'Int. al procesamiento de leng. natural', creditos: 12, Cat: 4, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1848, name: 'Robotica basada en comportamientos', creditos: 15, Cat: 4, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1857, name: 'Fundamentos de la robotica autonoma', creditos: 7, Cat: 4, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1871, name: 'Fundamentos de optimizacion', creditos: 6, Cat: 7, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 1876, name: 'Taller de mineria de procesos de negocio (TPM)', creditos: 8, Cat: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1758, name: 'Relaciones personales en ing. de soft. y ger. de proy.', creditos: 10, Cat: 8, Req: [{courseReq: "1716"}]},
+  {id: 1767, name: 'Princ. y fund. del proc. pers. de software', creditos: 7, Cat: 8, Req: [{courseReq: "1324"}]},
+  {id: 1775, name: 'Taller de sistemas empresariales', creditos: 15, Cat: 10, Req: [{courseReq: "1327", examReq: "1911&&1324"}]},
+  {id: 1776, name: 'Taller de sist. de inf. geo. empres.', creditos: 10, Cat: 10, Req: [{examReq: "1327&&1911"}]},
+  //{id: 1780, name: 'Taller de robotica educativa (Requiere 10 creditos en cat 2)', creditos: 6, Cat: 10},
+  {id: 1781, name: 'Sistemas de informacion para el analisis de grandes volumenes de datos', creditos: 10, Cat: 5, Req: [{courseReq: "1327", examReq: "1324&&1911"}]},
+  {id: 1828, name: 'Int. al procesamiento de leng. natural', creditos: 12, Cat: 4, Req: [{courseReq: "1327", examReq: "1324&&1027&&1323&&1325&&1025"}]},
+  {id: 1848, name: 'Robotica basada en comportamientos', creditos: 15, Cat: 4, Req: [{courseReq: "1327", examReq: "1027&&1151"}]},
+  //{id: 1857, name: 'Fundamentos de la robotica autonoma (Requiere 12 cred en Cat 3 y 10 cred en Cat 1)', creditos: 7, Cat: 4, Req: [{courseReq: "1323", examReq: "1321&&1027"}]},
+  {id: 1871, name: 'Fundamentos de optimizacion', creditos: 6, Cat: 7, Req: [{examReq: "1610"}]},
+  {id: 1876, name: 'Taller de mineria de procesos de negocio (TPM)', creditos: 8, Cat: 10, Req: [{courseReq: "1327&&1911"}]},
   {id: 1911, name: 'Fundamentos de Bases de datos', creditos: 15, Cat: 5, Req: [{examReq: "1323&&1027&&1026"}]},
   {id: 1918, name: 'Administracion y seguridad de sistemas', creditos: 10, Cat: 5, Req: [{courseReq: "1716&&1911&&1537&&1446", examReq: "1443"}]},
   {id: 1936, name: 'Int. A los sist. De infor. Geografica', creditos: 10, Cat: 5, Req: [{courseReq: "1327", examReq: "1911&&1324"}]},
   {id: 1933, name: 'Tecnicas avanzadas para la gest. De sist. De inf.', creditos: 15, Cat: 5, Req: [{courseReq: "1446", examReq: "1911"}]},
   {id: 1938, name: 'Recup. De Inf. Y Recomend. En la web (WIR)', creditos: 10, Cat: 5, Req: [{examReq: "1911&&1323"}]},
   {id: 1941, name: 'Integracion de datos', creditos: 8, Cat: 5, Req: [{examReq: "1911", credReq: 250}]},
-  //{id: 1942, name: 'Fundamentos de la web semantica', creditos: 8, Cat: 5, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1942, name: 'Fundamentos de la web semantica', creditos: 8, Cat: 5, Req: [{examReq: "1716&&1911"}]},
   {id: 1944, name: 'Administracion general para Ingenieros', creditos: 5, Cat: 9, Req: [{credReq: 140}]},
   {id: 1945, name: 'Practica de Administracion para Ingenieros', creditos: 5, Cat: 9, Req: [{courseReq: "1944"}]},
   {id: 1947, name: 'Taller de leng. Y tec. De la web semantica', creditos: 10, Cat: 5, Req: [{courseReq: "1911&&1446"}]},
   {id: 1948, name: 'Int. al middleware', creditos: 10, Cat: 5, Req: [{courseReq: "1327&&1446&&1716", examReq: "1911&&1537"}]},
-  //{id: 1949, name: 'Bases de datos no relacionales', creditos: 10, Cat: 5, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 1949, name: 'Bases de datos no relacionales', creditos: 10, Cat: 5, Req: [{examReq: "1911"}]},
   {id: 1951, name: 'Taller: Herramientas para la innovacion', creditos: 4},
   {id: 1952, name: 'Taller de sistemas ciber-fisicos', creditos: 6, Cat: 3, Req: [{courseReq: "1446", examReq: "1537&&1443", credReq: 200}]},
   {id: 2040, name: 'Iniciacion a la prod. Audiovis. Y multimedia', creditos: 6},
   {id: 2216, name: 'Tutoria entre pares 1', creditos: 4},
-  {id: 2217, name: 'Tutoria entre pares 2', creditos: 4, Req: [{examReq: "2216"}]}
-  //{id: 5705, name: 'Seminario de ingenieria biomedica', creditos: 4, Cat: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 5707, name: 'Imagenes medicas: Adquisicion, instrumentacion y gestion', creditos: 8, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 5828, name: 'Tratamiento de imagenes por computadora', creditos: 10, Req: [{courseReq: "", examReq: "", credReq: 0}]}
-  //{id: 5916, name: 'Fundamentos de seguridad informatica', creditos: 12, Cat: 3, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+  {id: 2217, name: 'Tutoria entre pares 2', creditos: 4, Req: [{examReq: "2216"}]},
+  {id: 5705, name: 'Seminario de ingenieria biomedica', creditos: 4, Cat: 10, Req: [{courseReq: "1446&&1327"}]},
+  {id: 5707, name: 'Imagenes medicas: Adquisicion, instrumentacion y gestion', creditos: 8, Req: [{courseReq: "1446&&1721"}]},
+  {id: 5828, name: 'Tratamiento de imagenes por computadora', creditos: 10, Req: [{examReq: "1033&&1321"}]},
+  {id: 5916, name: 'Fundamentos de seguridad informatica', creditos: 12, Cat: 3, Req: [{examReq: "1027&&1446&&1911&&1323&&1537"}]}
 ];
 
 //{id: , name: '', creditos: 0, Cat: 0, Req: [{courseReq: "", examReq: "", credReq: 0}]}
