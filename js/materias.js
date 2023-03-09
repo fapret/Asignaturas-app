@@ -28,6 +28,7 @@ var materias = [
   {id: 1347, name: 'Const. Formal de prog. En teoria de tipos', creditos: 12, Cat: 2, Req: [{courseReq: "1340||1354", examReq: "1027"}]},
   {id: 1349, name: 'Computacion grafica avanzada', creditos: 12, Cat: 2, Req: [{courseReq: "1316"}]},
   {id: 1350, name: 'Programación funcional avanzada', creditos: 12, Cat: 2, Req: [{courseReq: "1354"}]},
+  {id: 1353, name: 'DIDACTICA DE ALGORIT.Y ESTRUCT.DE DATOS', creditos: 7, Cat: 2, Req: [{examReq: "1322&&1321"}]},
   {id: 1354, name: 'Programación funcional', creditos: 10, Cat: 2, Req: [{examReq: "1321&&1027&&1325&&1023"}]},
   {id: 1355, name: 'Complejidad Computacional', creditos: 9, Cat: 2, Req: [{courseReq: "1325", examReq: "1323"}]},
   {id: 1437, name: 'Taller de Seguridad Informatica', creditos: 7, Cat: 3, Req: [{courseReq: "1446", examReq: "1323&&1911"}]},
