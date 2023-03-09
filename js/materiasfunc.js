@@ -122,7 +122,7 @@ function getMateria(idmateria){
   return undefined;
 }
 
-function updateBitField(bitField, materia, value = true){
+function getUpdatedBitField(bitField, materia, value = true){
   let found = false;
   let i;
   for(i = 0; !found && i < materias.length; i++){
@@ -134,10 +134,10 @@ function updateBitField(bitField, materia, value = true){
   if(!found)
     return;
   if(value){
-    bitField = bitField.substring(0, i) + "1" + bitField.substring(i+1);
+    return bitField.substring(0, i) + "1" + bitField.substring(i+1);
   }
   else
-    bitField = bitField.substring(0, i) + "0" + bitField.substring(i+1);
+    return bitField.substring(0, i) + "0" + bitField.substring(i+1);
 }
 
 function getBitFieldShrinked(bitField){
