@@ -25,6 +25,7 @@ var materias = [
   {id: 1325, name: 'Teoria de Lenguajes', creditos: 12, Cat: 2, Req: [{courseReq: "1323", examReq: "1027&&1023&&1061&&1030"}]},
   {id: 1327, name: 'Taller de Programación', creditos: 15, Cat: 10, Req: [{examReq: "1324"}, {courseReq: "1324", examReq: "1323"}]},
   {id: 1340, name: 'Programación Logica', creditos: 10, Cat: 2, Req: [{examReq: "1027&&1323&&1325&&1026"}]},
+  {id: 1347, name: 'Const. Formal de prog. En teoria de tipos', creditos: 12, Cat: 2, Req: [{courseReq: "1340||1354", examReq: "1027"}]},
   {id: 1349, name: 'Computacion grafica avanzada', creditos: 12, Cat: 2, Req: [{courseReq: "1316"}]},
   {id: 1350, name: 'Programación funcional avanzada', creditos: 12, Cat: 2, Req: [{courseReq: "1354"}]},
   {id: 1354, name: 'Programación funcional', creditos: 10, Cat: 2, Req: [{examReq: "1321&&1027&&1325&&1023"}]},
@@ -45,9 +46,27 @@ var materias = [
   {id: 1633, name: 'Teoria, Algorit. Y aplic. De Gest. Logis', creditos: 8, Cat: 7, Req: [{courseReq: "1631||1624"}]},
   {id: 1634, name: 'Analisis de datos en redes complejas', creditos: 10, Cat: 7, Req: [{courseReq: "1610"}]},
   {id: 1637, name: 'Algoritmos Evolutivos', creditos: 10, Cat: 7, Req: [{examReq: "1324&&1610&&1025"}]},
+  {id: 1640, name: 'Optimizacion continua y aplicaciones', creditos: 10, Cat: 7, Req: [{examReq: "1610"}]},
+  {id: 1716, name: 'Int. a la ingenieria de software', creditos: 10, Cat: 8, Req: [{courseReq: "1911&&1324&&1327"}]},
+  {id: 1721, name: 'Proyecto de ingenieria de software', creditos: 15, Cat: 10, Req: [{courseReq: "1716", examReq: "1324"}]},
+  {id: 1730, name: 'Proyecto de grado', creditos: 30, Cat: 10, Req: [{credReq: 380},{courseReq: "1537&&1327&&1911&&1610&&1323&&1716&&1033&&1325&&1721&&1324&&1443", credReq: 365}]},
+  {id: 1742, name: 'Taller de verificacion del software', creditos: 8, Cat: 8, Req: [{courseReq: "1716", examReq: "1911"}]},
 
+  {id: 1911, name: 'Fundamentos de Bases de datos', creditos: 15, Cat: 5, Req: [{examReq: "1323&&1027&&1026"}]},
+  {id: 1918, name: 'Administracion y seguridad de sistemas', creditos: 10, Cat: 5, Req: [{courseReq: "1716&&1911&&1537&&1446", examReq: "1443"}]},
+  {id: 1936, name: 'Int. A los sist. De infor. Geografica', creditos: 10, Cat: 5, Req: [{courseReq: "1327", examReq: "1911&&1324"}]},
+  {id: 1933, name: 'Tecnicas avanzadas para la gest. De sist. De inf.', creditos: 15, Cat: 5, Req: [{courseReq: "1446", examReq: "1911"}]},
+  {id: 1938, name: 'Recup. De Inf. Y Recomend. En la web (WIR)', creditos: 10, Cat: 5, Req: [{examReq: "1911&&1323"}]},
+  {id: 1941, name: 'Integracion de datos', creditos: 8, Cat: 5, Req: [{examReq: "1911", credReq: 250}]},
   {id: 1944, name: 'Administracion general para Ingenieros', creditos: 5, Cat: 9, Req: [{credReq: 140}]},
-  {id: 1945, name: 'Practica de Administracion para Ingenieros', creditos: 5, Cat: 9, Req: [{courseReq: "1944"}]}
+  {id: 1945, name: 'Practica de Administracion para Ingenieros', creditos: 5, Cat: 9, Req: [{courseReq: "1944"}]},
+  {id: 1947, name: 'Taller de leng. Y tec. De la web semantica', creditos: 10, Cat: 5, Req: [{courseReq: "1911&&1446"}]},
+  {id: 1948, name: 'Int. al middleware', creditos: 10, Cat: 5, Req: [{courseReq: "1327&&1446&&1716", examReq: "1911&&1537"}]},
+  {id: 1951, name: 'Taller: Herramientas para la innovacion', creditos: 4},
+  {id: 1952, name: 'Taller de sistemas ciber-fisicos', creditos: 6, Cat: 3, Req: [{courseReq: "1446", examReq: "1537&&1443", credReq: 200}]},
+  {id: 2040, name: 'Iniciacion a la prod. Audiovis. Y multimedia', creditos: 6},
+  {id: 2216, name: 'Tutoria entre pares 1', creditos: 4},
+  {id: 2217, name: 'Tutoria entre pares 2', creditos: 4, Req: [{examReq: "2216"}]}
 ];
 
-//{id: , name: '', creditos: 0, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+//{id: , name: '', creditos: 0, Cat: 0, Req: [{courseReq: "", examReq: "", credReq: 0}]}
