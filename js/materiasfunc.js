@@ -16,6 +16,7 @@ function updateAvailableMaterias(selectAvailable, selectCourses, selectExams){
       for(let k = 0; k < materia.Req?.length && !available; k++){
         let examsCopy = materia.Req[k]?.examReq;
         let coursesCopy = materia.Req[k]?.courseReq;
+        let creds = materia.Req[k]?.credReq;
         let examsReq = false;
         let coursesReq = false;
         if(examsCopy){
@@ -46,10 +47,12 @@ function updateAvailableMaterias(selectAvailable, selectCourses, selectExams){
         } else {
           coursesReq = true;
         }
-        //TODO check creditos
-        if(examsReq && coursesReq){
+        let credsBool = true;
+        if(creds != undefined && creds > parseInt(totalCreditos.innerHTML))
+          credsBool = false;
+
+        if(examsReq && coursesReq && credsBool){
           addToSelect(selectAvailable, materia.name, materia.id);
-          materia.ExamObtained = true;
           available = true;
         }
       }
