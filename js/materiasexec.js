@@ -98,6 +98,7 @@ function addCreditos(category, creditos){
 }
 
 updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
+document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + "+" + getBitFieldShrinked(examsbitField);
 
 markCourse1.addEventListener("click", () => {
   let collection = allMateriasSelect.selectedOptions;

@@ -38,11 +38,21 @@
       </div>
       <div class="MateriasContainer">
         Materias con curso:
-        <select name="courseObtained" id="courseObtained" multiple disabled>
+        <select name="courseObtained" id="courseObtained" size="10" disabled>
         </select>
+        <div class="buttons-div">
+          <button type="button" id="removeCourse" disabled>
+            Quitar curso
+          </button>
+        </div>
         Materias Exoneradas:
-        <select name="examObtained" id="examObtained" multiple disabled>
+        <select name="examObtained" id="examObtained" size="10" disabled>
         </select>
+        <div class="buttons-div">
+          <button type="button" id="removeExam" disabled>
+            Quitar Exoneracion
+          </button>
+        </div>
       </div>
       <table id="table">
         <tr>
@@ -233,6 +243,7 @@
           </th>
         </tr>
       </table>
+      <h2>Bitfield: <span id="bitField"></span></h2>
       <script type="text/javascript" src="./js/materiasexec.js"></script>
       <h3>Creada por Santiago Nicolas Diaz Conde (<a href="https://www.fapret.com">https://www.fapret.com</a>)</h2>
       <h5>Todos los derechos reservados - Copyright 2023 - fapret.mail@gmail.com</h3>

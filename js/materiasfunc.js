@@ -1,5 +1,12 @@
 "use strict";
 
+var coursebitField = "";
+var examsbitField = "";
+for(let i = 0; i < materias.length; i++){
+  coursebitField += "0";
+  examsbitField += "0";
+}
+
 function emptySelect(selectElement) {
    var i, L = selectElement.options.length - 1;
    for(i = L; i >= 0; i--) {
@@ -96,7 +103,7 @@ function disableOption(select, idmateria){
     let value = option.value;
     if(value == idmateria) {
         option.disabled = true;
-        break;
+        return;
     }
   }
 }
@@ -113,4 +120,45 @@ function getMateria(idmateria){
       return materia;
   }
   return undefined;
+}
+
+function updateBitField(bitField, materia, value){
+  let found = false;
+  let i;
+  for(i = 0; !found && i < materias.length; i++){
+    let materiaAux = materias[i];
+    if(materiaAux.id == materia){
+      found = true;
+    }
+  }
+  if(!found)
+    return;
+  if(value){
+    bitField = bitField.substring(0, i) + "1" + bitField.substring(i+1);
+  }
+  else
+    bitField = bitField.substring(0, i) + "0" + bitField.substring(i+1);
+}
+
+function getBitFieldShrinked(bitField){
+  let out = "";
+  for(let i = 0; i < bitField.length; i++){
+    let localChar = 0;
+    let j;
+    for(j = i; j < 32 && j < bitField.length; j++){
+      let pos = j - i;
+      let value = bitField.charAt(j);
+      if(value)
+        localChar |= Math.pow(2, pos);
+      else
+        localChar ^= Math.pow(2, pos);
+    }
+    i = j;
+    out += String.fromCharCode(';'.charCodeAt(0) + localChar);
+  }
+  return out;
+}
+
+function loadShrinkedBitfield(shrinkedBitfield, bitField){
+  //TODO
 }
