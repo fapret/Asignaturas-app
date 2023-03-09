@@ -104,6 +104,7 @@ markCourse1.addEventListener("click", () => {
   let collection = allMateriasSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
+    updateBitField(coursebitField, collection[i].value);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
@@ -112,6 +113,7 @@ markCourse2.addEventListener("click", () => {
   let collection = availableMateriasSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
+    updateBitField(coursebitField, collection[i].value);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
@@ -122,6 +124,7 @@ markExam1.addEventListener("click", () => {
     let materia = getMateria(collection[i].value);
     disableOption(allMateriasSelect, materia.id);
     addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
+    updateBitField(examsbitField, collection[i].value);
     removeFromSelect(courseObtainedSelect, materia.id);
     removeFromSelect(availableMateriasSelect, materia.id);
     addCreditos(materia.Cat, materia.creditos);
@@ -135,6 +138,7 @@ markExam2.addEventListener("click", () => {
     let materia = getMateria(collection[i].value);
     disableOption(allMateriasSelect, materia.id);
     addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
+    updateBitField(examsbitField, collection[i].value);
     removeFromSelect(courseObtainedSelect, materia.id);
     removeFromSelect(availableMateriasSelect, materia.id);
     addCreditos(materia.Cat, materia.creditos);
