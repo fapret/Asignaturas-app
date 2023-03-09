@@ -18,6 +18,16 @@ select {
   min-height: 10rem;
 }
 
+h1{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+h5{
+  text-align: center;
+}
+
 .MateriasContainer{
   display: flex;
   flex-direction: column;
