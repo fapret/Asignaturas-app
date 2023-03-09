@@ -71,3 +71,15 @@ var materias = [
 ];
 
 //{id: , name: '', creditos: 0, Cat: 0, Req: [{courseReq: "", examReq: "", credReq: 0}]}
+//0: Matematica
+//1: Ciencias Experimentales
+//2: PROGRAMACION
+//3: Arquitectura, Sistemas Operativos y Redes de computadores
+//4: Inteligencia Artificial y Robótica
+//5: Bases de Datos y Sistemas de Información
+//6: Cálculo Numérico y Simbólico
+//7: Investigación Operativa
+//8: Ingeniería de Software
+//9: Gestión en Organizaciones
+//10: Actividades Integradoras : Talleres, pasa talleres, pasantías y proyectos
+//11: Ciencias Humanas y Sociales
