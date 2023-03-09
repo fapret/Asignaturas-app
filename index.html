@@ -1,0 +1,237 @@
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Fapret Fing Asignaturas calculator</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script type="text/javascript" src="./js/materias.js"></script>
+        <script type="text/javascript" src="./js/materiasfunc.js"></script>
+    </head>
+    <body>
+      <div class="MateriasContainer">
+        Todas las materias:
+        <select name="allMaterias" id="allMaterias" multiple>
+        </select>
+        <span class="alert">Aviso: Algunas materias pueden no estar, solo se muestran las cargadas a este sitio</span>
+        <div class="buttons-div">
+          <button type="button" id="markCourse1">
+            Marcar como curso obtenido
+          </button>
+          <button type="button" id="markExam1">
+            Marcar como Exonerada
+          </button>
+        </div>
+      </div>
+      <div class="MateriasContainer">
+        Materias que puedes dar:
+        <select name="availableMaterias" id="availableMaterias" multiple>
+        </select>
+        <div class="buttons-div">
+          <button type="button" id="markCourse2">
+            Marcar como curso obtenido
+          </button>
+          <button type="button" id="markExam2">
+            Marcar como Exonerada
+          </button>
+        </div>
+      </div>
+      <div class="MateriasContainer">
+        Materias con curso:
+        <select name="courseObtained" id="courseObtained" multiple disabled>
+        </select>
+        Materias Exoneradas:
+        <select name="examObtained" id="examObtained" multiple disabled>
+        </select>
+      </div>
+      <table id="table">
+        <tr>
+          <th>
+            Categoria
+          </th>
+          <th>
+            Creditos Obtenidos
+          </th>
+          <th>
+            Creditos Requeridos
+          </th>
+        </tr>
+        <tr>
+          <th>
+            Grupo de materias básicas
+          </th>
+          <td id="superCat0">
+            0
+          </td>
+          <th>
+            80
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Matematica
+          </td>
+          <td id="cat0">
+            0
+          </td>
+          <td>
+            70
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ciencias Experimentales
+          </td>
+          <td id="cat1">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Grupo de materias básico-tecnológicas, técnicas y actividades integradoras
+          </th>
+          <td id="superCat1">
+            0
+          </td>
+          <th>
+            220
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Programación
+          </td>
+          <td id="cat2">
+            0
+          </td>
+          <td>
+            60
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Arquitectura, Sistemas Operativos y Redes de computadores
+          </td>
+          <td id="cat3">
+            0
+          </td>
+          <td>
+            30
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Inteligencia Artificial y Robótica
+          </td>
+          <td id="cat4">
+            0
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Bases de Datos y Sistemas de Información
+          </td>
+          <td id="cat5">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Cálculo Numérico y Simbólico
+          </td>
+          <td id="cat6">
+            0
+          </td>
+          <td>
+            8
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Investigación Operativa
+          </td>
+          <td id="cat7">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ingeniería de Software
+          </td>
+          <td id="cat8">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Gestión en Organizaciones
+          </td>
+          <td id="cat9">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Actividades Integradoras : Talleres, pasa talleres, pasantías y proyectos
+          </td>
+          <td id="cat10">
+            0
+          </td>
+          <td>
+            45
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Grupo de materias complementarias
+          </th>
+          <td id="superCat2">
+            0
+          </td>
+          <th>
+            10
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Ciencias Humanas y Sociales
+          </td>
+          <td id="cat11">
+            0
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <th>
+            CREDITOS EN TOTAL:
+          </th>
+          <td id="totalCreditos">
+            0
+          </td>
+          <th>
+            450
+          </th>
+        </tr>
+      </table>
+      <script type="text/javascript" src="./js/materiasexec.js"></script>
+    </body>
+</html>
