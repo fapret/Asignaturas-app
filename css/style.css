@@ -57,3 +57,9 @@ h5{
   padding-top: 1rem;
   margin: auto;
 }
+
+.buttons-bitfield{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
