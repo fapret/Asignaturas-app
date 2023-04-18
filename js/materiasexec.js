@@ -212,9 +212,9 @@ markExam2.addEventListener("click", () => {
 removeCourse.addEventListener("click", () => {
   let collection = courseObtainedSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
-    removeFromSelect(courseObtainedSelect, collection[i].value);
-    coursebitField = getUpdatedBitField(coursebitField, collection[i].value);
+    coursebitField = getUpdatedBitField(coursebitField, collection[i].value, false);
     document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
+    removeFromSelect(courseObtainedSelect, collection[i].value);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
