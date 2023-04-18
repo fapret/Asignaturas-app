@@ -224,10 +224,10 @@ removeExam.addEventListener("click", () => {
   for (let i = 0; i < collection.length; i++) {
     let materia = getMateria(collection[i].value);
     enableOption(allMateriasSelect, materia.id);
-    removeFromSelect(examObtainedSelect, materia.id);
-    examsbitField = getUpdatedBitField(examsbitField, collection[i].value);
+    examsbitField = getUpdatedBitField(examsbitField, collection[i].value, false);
     document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
     removeCreditos(materia.Cat, materia.creditos);
+    removeFromSelect(examObtainedSelect, materia.id);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 })
