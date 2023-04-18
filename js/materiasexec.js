@@ -6,6 +6,8 @@ const markCourse1 = document.getElementById("markCourse1");
 const markCourse2 = document.getElementById("markCourse2");
 const markExam1 = document.getElementById("markExam1");
 const markExam2 = document.getElementById("markExam2");
+const removeCourse = document.getElementById("removeCourse");
+const removeExam = document.getElementById("removeExam");
 
 var totalCreditos = document.getElementById("totalCreditos");
 var superCat0 = document.getElementById("superCat0");
@@ -97,55 +99,67 @@ function addCreditos(category, creditos){
   totalCreditos.innerHTML = totalCreditosAmount;
 }
 
-updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
-document.getElementById("bitField").innerHTML = `"` + getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField) + `"`;
-
-markCourse1.addEventListener("click", () => {
-  let collection = allMateriasSelect.selectedOptions;
+function markCourse(collection) {
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
     coursebitField = getUpdatedBitField(coursebitField, collection[i].value);
-    document.getElementById("bitField").innerHTML = `"` + getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField) + `"`;
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
+}
+
+function markExam(collection) {
+  for (let i = 0; i < collection.length; i++) {
+    let materia = getMateria(collection[i].value);
+    disableOption(allMateriasSelect, materia.id);
+    addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
+    examsbitField = getUpdatedBitField(examsbitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
+    removeFromSelect(courseObtainedSelect, materia.id);
+    //removeFromSelect(availableMateriasSelect, materia.id);
+    addCreditos(materia.Cat, materia.creditos);
+  }
+  updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
+}
+
+updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
+document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
+
+markCourse1.addEventListener("click", () => {
+  markCourse(allMateriasSelect.selectedOption);
 });
 
 markCourse2.addEventListener("click", () => {
-  let collection = availableMateriasSelect.selectedOptions;
-  for (let i = 0; i < collection.length; i++) {
-    addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
-    coursebitField = getUpdatedBitField(coursebitField, collection[i].value);
-    document.getElementById("bitField").innerHTML = `"` + getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField) + `"`;
-  }
-  updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
+  markCourse(availableMateriasSelect.selectedOptions);
 });
 
 markExam1.addEventListener("click", () => {
-  let collection = allMateriasSelect.selectedOptions;
+  markExam(allMateriasSelect.selectedOptions);
+});
+
+markExam2.addEventListener("click", () => {
+  markExam(availableMateriasSelect.selectedOptions);
+});
+
+removeCourse.addEventListener("click", () => {
+  let collection = courseObtainedSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
-    let materia = getMateria(collection[i].value);
-    disableOption(allMateriasSelect, materia.id);
-    addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
-    examsbitField = getUpdatedBitField(examsbitField, collection[i].value);
-    document.getElementById("bitField").innerHTML = `"` + getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField) + `"`;
-    removeFromSelect(courseObtainedSelect, materia.id);
-    removeFromSelect(availableMateriasSelect, materia.id);
-    addCreditos(materia.Cat, materia.creditos);
+    removeFromSelect(courseObtainedSelect, collection[i].value);
+    coursebitField = getUpdatedBitField(coursebitField, collection[i].value);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 });
 
-markExam2.addEventListener("click", () => {
-  let collection = availableMateriasSelect.selectedOptions;
+removeExam.addEventListener("click", () => {
+  let collection = examObtainedSelect.selectedOptions;
   for (let i = 0; i < collection.length; i++) {
     let materia = getMateria(collection[i].value);
-    disableOption(allMateriasSelect, materia.id);
-    addToSelect(examObtainedSelect,  collection[i].innerHTML, materia.id);
+    enableOption(allMateriasSelect, materia.id);
+    removeFromSelect(examObtainedSelect, materia.id);
     examsbitField = getUpdatedBitField(examsbitField, collection[i].value);
-    document.getElementById("bitField").innerHTML = `"` + getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField) + `"`;
-    removeFromSelect(courseObtainedSelect, materia.id);
-    removeFromSelect(availableMateriasSelect, materia.id);
-    addCreditos(materia.Cat, materia.creditos);
+    document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
+    addCreditos(materia.Cat, 0 - materia.creditos);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
-});
+})

@@ -108,6 +108,17 @@ function disableOption(select, idmateria){
   }
 }
 
+function enableOption(select, idmateria){
+  for (let i = 0; i < select.getElementsByTagName("option").length; i++) {
+    let option = select.getElementsByTagName("option")[i];
+    let value = option.value;
+    if(value == idmateria) {
+        option.disabled = false;
+        return;
+    }
+  }
+}
+
 function setCourseObtained(select, materia, idmateria){
   addToSelect(select, materia, idmateria);
   updateAvailableMaterias();
