@@ -99,6 +99,74 @@ function addCreditos(category, creditos){
   totalCreditos.innerHTML = totalCreditosAmount;
 }
 
+function removeCreditos(category, creditos){
+    if(category == undefined){
+    let totalCreditosAmount = parseInt(totalCreditos.innerHTML) - creditos;
+    totalCreditos.innerHTML = totalCreditosAmount;
+    return;
+  }
+  if(category < 2){
+    //Add to SuperCat 0
+    let superCat0Amount = parseInt(superCat0.innerHTML) - creditos;
+    superCat0.innerHTML = superCat0Amount;
+  }
+  else if(category < 11){
+    //Add to SuperCat 1
+    let superCat1Amount = parseInt(superCat1.innerHTML) - creditos;
+    superCat1.innerHTML = superCat1Amount;
+  }
+  else if(category == 11){
+    //Add to SuperCat 2
+    let superCat2Amount = parseInt(superCat2.innerHTML) - creditos;
+    superCat2.innerHTML = superCat2Amount;
+  }
+  let categoryElement;
+  switch (category) {
+    case 0:
+      categoryElement = cat0;
+      break;
+    case 1:
+      categoryElement = cat1;
+      break;
+    case 2:
+      categoryElement = cat2;
+      break;
+    case 3:
+      categoryElement = cat3;
+      break;
+    case 4:
+      categoryElement = cat4;
+      break;
+    case 5:
+      categoryElement = cat5;
+      break;
+    case 6:
+      categoryElement = cat6;
+      break;
+    case 7:
+      categoryElement = cat7;
+      break;
+    case 8:
+      categoryElement = cat8;
+      break;
+    case 9:
+      categoryElement = cat9;
+      break;
+    case 10:
+      categoryElement = cat10;
+      break;
+    case 11:
+      categoryElement = cat11;
+      break;
+    default:
+      break;
+  }
+  let categoryElementAmount = parseInt(categoryElement.innerHTML) - creditos;
+  categoryElement.innerHTML = categoryElementAmount;
+  let totalCreditosAmount = parseInt(totalCreditos.innerHTML) - creditos;
+  totalCreditos.innerHTML = totalCreditosAmount;
+}
+
 function markCourse(collection) {
   for (let i = 0; i < collection.length; i++) {
     addToSelect(courseObtainedSelect,  collection[i].innerHTML, collection[i].value);
@@ -159,7 +227,7 @@ removeExam.addEventListener("click", () => {
     removeFromSelect(examObtainedSelect, materia.id);
     examsbitField = getUpdatedBitField(examsbitField, collection[i].value);
     document.getElementById("bitField").innerHTML = getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField);
-    addCreditos(materia.Cat, 0 - materia.creditos);
+    removeCreditos(materia.Cat, materia.creditos);
   }
   updateAvailableMaterias(availableMateriasSelect, courseObtainedSelect, examObtainedSelect);
 })
