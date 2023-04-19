@@ -176,6 +176,16 @@ function getBitFieldShrinked(bitField){
   return out;
 }
 
-function loadShrinkedBitfield(shrinkedBitfield, bitField){
+function loadShrinkedBitfield(shrinkedBitfield){
   //TODO
+}
+
+function reset(){
+  coursebitField = "";
+  examsbitField = "";
+  for(let i = 0; i < materias.length; i++){
+    coursebitField += "0";
+    examsbitField += "0";
+  }
+  loadShrinkedBitfield(getBitFieldShrinked(coursebitField) + getBitFieldShrinked(examsbitField));
 }
